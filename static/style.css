@@ -1,0 +1,28 @@
+.title-home {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
