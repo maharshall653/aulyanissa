@@ -1,0 +1,109 @@
+Table dosen {
+  id int [pk, increment] // auto-increment
+  NIP int
+  nama_dosen varchar
+  tanggal_lahir varchar
+  email varchar
+  fakultas varchar
+  prodi varchar
+  jabatan varchar
+  photo varchar
+}
+
+Table tenaga_pendidik {
+  NIP int
+  nama_tenagapendidik varchar
+  tanggal_lahir varchar
+  email varchar
+  unit varchar
+  prodi varchar
+  jabatan varchar
+  photo varchar
+}
+
+Table prodi {
+  id_prodi int [pk, increment] // auto-increment
+  nama_prodi varchar
+  jurusan varchar
+}
+
+Table mahasiswa {
+  NIM int
+  nama_mahasiswa varchar
+  tanggal_lahir varchar
+  email varchar
+  fakultas varchar
+  prodi varchar
+  photo varchar
+}
+
+Table nama_mahasiswa {
+  nama_depan varchar
+  nama_belakang varchar
+  semester varchar
+}
+
+Table mata_kuliah {
+  kode_matkul varchar
+  nama_matkul varchar
+  nama_dosen varchar
+  sks int
+}
+
+Table KRS {
+  kode_matkul varchar
+  nama_matkul varchar
+  sks int
+}
+
+Table kelas {
+  kode_kelas varchar
+  ruang varchar
+}
+
+Table transkip_nilai {
+  semester varchar
+  kode_matkul varchar
+  nama_matkul varchar
+  sks int
+  nilai int
+}
+
+Table jadwal_mata_kuliah {
+  sks int
+  kode_matkul varchar
+  nama_matkul varchar
+ kode_kelas varchar
+}
+
+Ref: "dosen"."nama_dosen" < "mata_kuliah"."nama_dosen"
+
+Ref: "dosen"."prodi" < "mahasiswa"."prodi"
+
+Ref: "mahasiswa"."prodi" < "prodi"."nama_prodi"
+
+Ref: "mata_kuliah"."kode_matkul" < "KRS"."kode_matkul"
+
+Ref: "mata_kuliah"."kode_matkul" < "transkip_nilai"."kode_matkul"
+
+Ref: "mata_kuliah"."nama_matkul" < "KRS"."nama_matkul"
+
+Ref: "mata_kuliah"."nama_matkul" < "transkip_nilai"."nama_matkul"
+
+Ref: "mata_kuliah"."sks" < "transkip_nilai"."sks"
+
+Ref: "nama_mahasiswa"."semester" < "transkip_nilai"."semester"
+
+Ref: "kelas"."kode_kelas" < "jadwal_mata_kuliah"."kode_kelas"
+
+Ref: "KRS"."kode_matkul" < "jadwal_mata_kuliah"."kode_matkul"
+
+Ref: "KRS"."nama_matkul" < "jadwal_mata_kuliah"."nama_matkul"
+
+Ref: "transkip_nilai"."kode_matkul" < "jadwal_mata_kuliah"."kode_matkul"
+
+Ref: "transkip_nilai"."nama_matkul" < "jadwal_mata_kuliah"."nama_matkul"
+
+Ref: "transkip_nilai"."sks" < "jadwal_mata_kuliah"."sks"
+
+Ref: "KRS"."sks" < "jadwal_mata_kuliah"."sks"

@@ -44,7 +44,7 @@
             <th>Email</th>
             <th>Fakultas</th>
             <th>Prodi</th>
-            <th>Alamat</th>
+            <th>Jabatan</th>
             <th>Photo</th>
         </tr>
         {% for dosen in dataDosen %}
@@ -55,7 +55,7 @@
             <td>{{ dosen.email }}</td>
             <td>{{ dosen.fakultas }}</td>
             <td>{{ dosen.prodi }}</td>
-            <td>{{ dosen.alamat }}</td>
+            <td>{{ dosen.jabatan }}</td>
             <td><img src="{{ dosen.photo }}" alt="foto" width="100px"></td>
         </tr>
         {% endfor %}
@@ -94,6 +94,7 @@
             <th>Email</th>
             <th>Fakultas</th>
             <th>Prodi</th>
+            <th>Jabatan</th>
             <th>Photo</th>
         </tr>
         {% for tenagapendidik in datatenagaPendidik %}
@@ -104,6 +105,7 @@
             <td>{{ tenagapendidik.email }}</td>
             <td>{{ tenagapendidik.fakultas }}</td>
             <td>{{ tenagapendidik.prodi }}</td>
+            <td>{{ tenagapendidik.jabatan }}</td>
             <td>{{ tenagapendidik.photo }}</td>
         </tr>
         {% endfor %}

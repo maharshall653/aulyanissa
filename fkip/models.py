@@ -8,7 +8,7 @@ class Dosen(models.Model):
     email = models.CharField(max_length=200)
     fakultas = models.CharField(max_length=200)
     prodi = models.CharField(max_length=200)
-    alamat = models.TextField()
+    jabatan = models.TextField()
     photo = models.CharField(max_length=500, null=True)
 
 class Tenaga_Pendidik(models.Model):
@@ -17,7 +17,7 @@ class Tenaga_Pendidik(models.Model):
     tanggal_lahir = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
     unit = models.CharField(max_length=200)
-    alamat = models.CharField(max_length=200)
+    jabatan = models.CharField(max_length=200)
     photo = models.CharField(max_length=500, null=True)
 
 class Mahasiswa(models.Model):
