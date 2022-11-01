@@ -21,6 +21,7 @@ from fh.views import fh
 from fisip.views import fisip 
 from fk.views import fk 
 from fkip.views import fkip
+from fkip.views import *
 from ft.views import ft
 from pascasarjana.views import pascasarjana
 from profil.views import profil
@@ -38,4 +39,13 @@ urlpatterns = [
     path('ft/', ft),
     path('pascasarjana/', pascasarjana),
     path('profil/', profil),
+    path('tambah-dosen/', tambah_dosen, name='tambah_dosen'),
+    path('dosen/ubah/<int:id_dosen>', ubah_dosen, name='ubah_dosen'),
+    path('dosen/hapus/<int:id_dosen>', hapus_dosen, name='hapus_dosen'),
+    path('tambah-tenagapendidik//', tambah_tenagapendidik, name='tambah_tenagapendidik'),
+    path('tenagapendidik/ubah/<int:id_tenagapendidik>', ubah_tenagapendidik, name='ubah_tenagapendidik'),
+    path('tenagapendidik/hapus/<int:id_tenagapendidik>', hapus_tenagapendidik, name='hapus_tenagapendidik'),
+    path('tambah-mahasiswa/', tambah_mahasiswa, name='tambah_mahasiswa'),
+    path('mahasiswa/ubah/<int:id_mahasiswa>', ubah_mahasiswa, name='ubah_mahasiswa'),
+    path('mahasiswa/hapus/<int:id_mahasiswa>', hapus_mahasiswa, name='hapus_mahasiswa'),
 ]
